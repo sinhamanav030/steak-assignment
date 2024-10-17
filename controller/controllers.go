@@ -43,7 +43,7 @@ func findPiar(arr []int, target int) (res [][]int) {
 	seen := make(map[int]int)
 
 	for i, num := range arr {
-		if id, ok := seen[target-num]; ok {
+		if id, ok := seen[target-num]; ok && id != i {
 			res = append(res, []int{i, id})
 		}
 		seen[num] = i
