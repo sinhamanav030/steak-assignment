@@ -20,8 +20,8 @@ const ErrInvalidInput = "invalid input for api"
 // controller function to handle endpoint
 func FindPairController(writer http.ResponseWriter, request *http.Request) {
 	var req FindPiarReq
-	err := json.NewDecoder(request.Body).Decode(&req)
 	var resp FindPairRes
+	err := json.NewDecoder(request.Body).Decode(&req)
 	if err != nil {
 		resp.Error = ErrInvalidInput
 		writer.WriteHeader(http.StatusBadRequest)

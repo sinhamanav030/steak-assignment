@@ -7,5 +7,5 @@ Run \
 ```go run main.go```
 
 # Sample api request
-```curl -X POST http://localhost:8080/find-pairs -H "Content-Type: application/json" -d '{"numbers": [1, 2, 3, 4, aa], "target": 6}'```
+```curl -X POST http://localhost:8080/find-pairs -H "Content-Type: application/json" -d '{"numbers": [1, 2, 3, 4, "aa"], "target": 6}'```
 
