@@ -40,13 +40,13 @@ func FindPairController(writer http.ResponseWriter, request *http.Request) {
 
 // function to implement logic to find solution
 func findPiar(arr []int, target int) (res [][]int) {
-	seen := make(map[int]int)
 
-	for i, num := range arr {
-		if id, ok := seen[target-num]; ok && id != i {
-			res = append(res, []int{i, id})
+	for i := 0; i < len(arr); i++ {
+		for j := i + 1; j < len(arr); j++ {
+			if arr[i]+arr[j] == target {
+				res = append(res, []int{i, j})
+			}
 		}
-		seen[num] = i
 	}
 	return res
 
